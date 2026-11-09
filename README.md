@@ -6,7 +6,7 @@
 
 ## Sitio web publicado
 
-**URL GitHub Pages:** `PENDIENTE: https://TU-USUARIO.github.io/Sockbuster-Video-Socks/`
+**URL GitHub Pages:** `LINK: https://suge-12.github.io/Sockbuster-Video-Socks/`
 
 > Reemplazar el enlace anterior por la URL real una vez activado GitHub Pages. La guía exige enviar solo la URL del repositorio público, cuyo README debe incluir el enlace al sitio.
 
