@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "nota": "Catálogo ficticio de demostración. Los cambios realizados por usuarios o administradores no modifican este archivo publicado.",
+  "productos": [
+    {"id":"prod-001","title":"Xenomorfo Nostromo","media":"Alien (1979)","collection":"sci-fi","price":8990,"stock":15,"sizes":["M","L"],"rating":4.8,"word":"NOSTROMO","color":"linear-gradient(145deg,#234b56,#102833)","emoji":"👽"},
+    {"id":"prod-002","title":"Regreso al Futuro 1985","media":"Back to the Future (1985)","collection":"sci-fi","price":9990,"stock":8,"sizes":["S","M","L"],"rating":4.9,"word":"88 MPH","color":"linear-gradient(145deg,#194d77,#122b59)","emoji":"⚡"},
+    {"id":"prod-003","title":"Pesadilla de Medianoche","media":"A Nightmare on Elm Street (1984)","collection":"terror","price":10990,"stock":3,"sizes":["M","L","XL"],"rating":4.7,"word":"DREAM ON","color":"linear-gradient(145deg,#71334e,#2d172c)","emoji":"🔪"},
+    {"id":"prod-004","title":"Misterio de Hawkins","media":"Stranger Things","collection":"terror","price":11990,"stock":12,"sizes":["S","M","L","XL"],"rating":4.9,"word":"UPSIDE DOWN","color":"linear-gradient(145deg,#842b42,#27172c)","emoji":"🚲"},
+    {"id":"prod-005","title":"Laboratorio Heisenberg","media":"Breaking Bad","collection":"drama","price":8990,"stock":6,"sizes":["M","L"],"rating":4.6,"word":"SAY MY NAME","color":"linear-gradient(145deg,#3b6d60,#173529)","emoji":"⚗️"},
+    {"id":"prod-006","title":"Central Perk Club","media":"Friends","collection":"drama","price":7990,"stock":17,"sizes":["S","M","L"],"rating":4.5,"word":"HOW YOU DOIN?","color":"linear-gradient(145deg,#68578b,#2c2647)","emoji":"☕"},
+    {"id":"prod-007","title":"Vecino Amarillo","media":"Los Simpson","collection":"animacion","price":6990,"stock":20,"sizes":["S","M","L","XL"],"rating":4.7,"word":"D’OH!","color":"linear-gradient(145deg,#ab8522,#49401e)","emoji":"🍩"},
+    {"id":"prod-008","title":"Aventura Infinita","media":"Adventure Time","collection":"animacion","price":8990,"stock":4,"sizes":["S","M","L"],"rating":4.8,"word":"ADVENTURE!","color":"linear-gradient(145deg,#367e91,#1e3c6c)","emoji":"🌈"},
+    {"id":"prod-009","title":"Galaxia Rebelde","media":"Star Wars","collection":"sci-fi","price":12990,"stock":9,"sizes":["M","L","XL"],"rating":4.9,"word":"FAR FAR AWAY","color":"linear-gradient(145deg,#4b4984,#151d42)","emoji":"🚀"}
+  ]
+}

@@ -1,0 +1,27 @@
+@startuml
+title Sockbuster - Vista de Desarrollo / Prototipo estático
+skinparam componentStyle rectangle
+package "GitHub Pages / Frontend" {
+  [Inicio (index.html)] as Home
+  [Catálogo (catalogo.html)] as Catalog
+  [Administración demo (admin.html)] as Admin
+  [Documentación UML] as Docs
+  [app-static.js] as App
+  [admin-static.js] as Edit
+  [store-local.js] as Store
+  artifact "productos.json" as JSON
+}
+database "localStorage del navegador" as Local
+Home --> Catalog
+Catalog --> App
+Admin --> Edit
+App --> Store
+Edit --> Store
+Store --> JSON : fetch / solo lectura
+Store --> Local : Lectura / escritura local
+note right of Local
+  Los datos no se comparten
+  entre usuarios o dispositivos.
+  No hay backend ni JWT.
+end note
+@enduml

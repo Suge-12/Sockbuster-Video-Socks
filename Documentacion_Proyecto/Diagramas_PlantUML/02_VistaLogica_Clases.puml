@@ -1,0 +1,72 @@
+@startuml
+title Sockbuster - Vista Lógica / Clases del Dominio
+skinparam classAttributeIconSize 0
+abstract class Usuario {
+  - idUsuario: String
+  - nombre: String
+  - email: String
+  - passwordHash: String
+  - rol: String
+  + autenticar(): JWT
+}
+class Cliente {
+  - direccionEnvio: String
+  + agregarAlCarrito(producto, cantidad)
+  + realizarCheckout(): Pedido
+  + publicarResena(producto, estrellas, comentario)
+}
+class Administrador {
+  + registrarProducto(datos)
+  + actualizarStock(producto, cantidad)
+  + modificarPrecio(producto, precio)
+}
+class ProductoCalcetin {
+  - idProducto: String
+  - tituloModelo: String
+  - temaPeliculaSerie: String
+  - precio: Integer
+  - stock: Integer
+  - tallasDisponibles: List<String>
+  + verificarStock(cantidad): Boolean
+}
+class ColeccionTematica {
+  - idColeccion: String
+  - nombre: String
+  - descripcion: String
+}
+class Carrito {
+  - idCarrito: String
+  + agregarItem(producto, cantidad)
+  + calcularTotal(): Integer
+}
+class ItemCarrito {
+  - cantidad: Integer
+  - precioUnitario: Integer
+}
+class Pedido {
+  - codigoUnico: String
+  - fechaPedido: Date
+  - estado: String
+  - montoTotal: Integer
+}
+class DetallePedido {
+  - cantidad: Integer
+  - precioUnitario: Integer
+}
+class Resena {
+  - ratingEstrellas: Integer
+  - comentario: String
+  - fechaPublicacion: Date
+}
+Usuario <|-- Cliente
+Usuario <|-- Administrador
+Cliente "1" -- "0..1" Carrito
+Cliente "1" -- "0..*" Pedido
+Cliente "1" -- "0..*" Resena
+Carrito "1" *-- "0..*" ItemCarrito
+ItemCarrito "0..*" --> "1" ProductoCalcetin
+Pedido "1" *-- "1..*" DetallePedido
+DetallePedido "0..*" --> "1" ProductoCalcetin
+ColeccionTematica "1" -- "0..*" ProductoCalcetin
+ProductoCalcetin "1" -- "0..*" Resena
+@enduml

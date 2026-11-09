@@ -1,0 +1,26 @@
+@startuml
+title Sockbuster - Vista de Procesos / Checkout simulado local
+actor Cliente
+participant "Catálogo y carrito JS" as UI
+participant "Lógica checkout JS" as Checkout
+database "localStorage navegador" as Local
+Cliente -> UI : Finalizar compra
+UI -> Checkout : Items y datos del cliente
+Checkout -> Local : Consultar stock local
+Local --> Checkout : Disponibilidad de este navegador
+alt Stock local insuficiente
+  Checkout --> UI : Error de stock
+  UI --> Cliente : Mostrar aviso
+else Stock local disponible
+  Checkout -> Checkout : Calcular total y código SB
+  Checkout -> Local : Guardar pedido ficticio
+  Checkout -> Local : Guardar descuento de stock local
+  Checkout --> UI : Resumen local del pedido
+  UI -> UI : Vaciar carrito
+  UI --> Cliente : Mostrar código y total
+end
+note over Checkout,Local
+  No hay pago real, base de datos
+  compartida ni transacción entre usuarios.
+end note
+@enduml

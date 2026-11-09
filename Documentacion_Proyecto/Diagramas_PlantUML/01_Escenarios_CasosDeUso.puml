@@ -1,0 +1,35 @@
+@startuml
+title Sockbuster Video & Socks - Escenarios (Casos de uso)
+left to right direction
+skinparam packageStyle rectangle
+actor "Cliente Visitante" as V
+actor "Cliente Registrado" as C
+actor Administrador as A
+C --|> V
+rectangle "Sockbuster Video & Socks" {
+  usecase "UC01: Explorar catálogo" as UC01
+  usecase "UC02: Filtrar categoría/talla/precio" as UC02
+  usecase "UC03: Gestionar carrito" as UC03
+  usecase "UC04: Simular checkout y pedido" as UC04
+  usecase "UC05: Publicar reseña (1-5)" as UC05
+  usecase "UC06: Autenticarse (JWT)" as UC06
+  usecase "UC07: Registrar modelo" as UC07
+  usecase "UC08: Modificar stock/precios" as UC08
+  usecase "UC09: Asociar película/serie" as UC09
+}
+V --> UC01
+V --> UC02
+V --> UC03
+V --> UC04
+C --> UC05
+A --> UC06
+A --> UC07
+A --> UC08
+A --> UC09
+UC02 ..> UC01 : <<extend>>
+UC04 ..> UC03 : <<include>>
+UC05 ..> UC06 : <<include>>
+UC07 ..> UC06 : <<include>>
+UC08 ..> UC06 : <<include>>
+UC09 ..> UC07 : <<extend>>
+@enduml

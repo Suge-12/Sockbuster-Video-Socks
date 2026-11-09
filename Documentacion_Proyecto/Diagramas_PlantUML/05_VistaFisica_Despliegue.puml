@@ -1,0 +1,24 @@
+@startuml
+title Sockbuster - Vista Física / Despliegue GitHub Pages
+cloud "GitHub Pages" {
+  node "CDN de archivos estáticos" {
+    artifact "HTML, CSS y JavaScript"
+    artifact "data/productos.json"
+    artifact "assets PNG y WebP"
+  }
+}
+node "Navegador visitante A" as A {
+  database "localStorage A" as LA
+}
+node "Navegador visitante B" as B {
+  database "localStorage B" as LB
+}
+A --> "CDN de archivos estáticos" : HTTPS GET
+B --> "CDN de archivos estáticos" : HTTPS GET
+A --> LA : Datos de A
+B --> LB : Datos de B
+note bottom of LB
+  Estados independientes. No se
+  sincronizan. No hay API ni JWT.
+end note
+@enduml
